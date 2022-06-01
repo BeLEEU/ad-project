@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className='box'>
-        maka baka
+        maka baka bakamaka
       </div>
     )
   }
