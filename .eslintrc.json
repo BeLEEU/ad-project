@@ -5,10 +5,15 @@
   "extends": [
     "airbnb"
   ],
+  "parser": "@typescript-eslint-parser",
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "rules": {
     "react/prefer-stateless-function": "off",
     "indent": ["error", 4],
-    "react/jsx-indent": ["error", 4]
-
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-filename-extension": ["error", {"extension": [".js", ".jsx", ".ts", "tsx"] }]
   }
 }
