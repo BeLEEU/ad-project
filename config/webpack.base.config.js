@@ -1,4 +1,7 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {
   entry: path.join(__dirname, '../src/index.jsx'),
@@ -6,6 +9,7 @@ const webpackConfigBase = {
     path: path.join(__dirname, '../dist'),
     filename: '[name].[fullhase:4].js'
   },
+  performance: { hints:false},
   resolve: {
     extensions: ['.js', '.jsx', '.tsx'],
     alias: {
@@ -24,7 +28,10 @@ const webpackConfigBase = {
       },
       {
         test: /\.(sc|c)ss/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader', 
+          'sass-loader']
       }
     ]
   }

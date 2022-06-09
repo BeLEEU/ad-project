@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { HashRouter as Router, Route, Routes} from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, Link} from 'react-router-dom'
 
 import IndexPage from "pages/index";
 import LoginPage from "pages/login";
@@ -22,12 +22,16 @@ import LoginPage from "pages/login";
 class AppRoute extends Component {
   render() {
     return (
+      <div>
         <Router>
           <Routes>
+          <Route path="/" element={<IndexPage/>}/>
             <Route path="/index" element={<IndexPage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
           </Routes>          
         </Router>
+      </div>
+        
     );
   }
 }

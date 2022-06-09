@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-//import './style.scss'
+import { Button } from 'antd'
+import './style.scss'
 
 interface Props {
 
@@ -8,8 +9,11 @@ interface Props {
 class IndexPage extends Component<Props> {
   render() {
     return (
-      <div className='box'>
-        index page
+      <div className='index-page'>
+        <div className='middle-box'>
+          <span>here is index page.</span>
+          <Button type='primary'>按钮</Button>
+        </div>                
       </div>
     )
   }
